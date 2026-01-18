@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Réservations - CinemaManager</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🎬 CinemaManager</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../dashboard.html" class="nav-link">
+                    <span>📊</span>
+                    <span data-i18n="dashboard">Tableau de bord</span>
+                </a>
+                <a href="films.html" class="nav-link">
+                    <span>🎞️</span>
+                    <span data-i18n="films">Films</span>
+                </a>
+                <a href="salles.html" class="nav-link">
+                    <span>🏢</span>
+                    <span data-i18n="rooms">Salles</span>
+                </a>
+                <a href="seances.html" class="nav-link">
+                    <span>⏰</span>
+                    <span data-i18n="sessions">Séances</span>
+                </a>
+                <a href="clients.html" class="nav-link">
+                    <span>👤</span>
+                    <span data-i18n="clients">Clients</span>
+                </a>
+                <a href="reservations.html" class="nav-link active">
+                    <span>🎟️</span>
+                    <span data-i18n="reservations">Réservations</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="logout()" class="btn btn-danger" data-i18n="logout">Déconnexion</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1 data-i18n="reservations">Gestion des Réservations</h1>
+                <div class="header-actions">
+                    <select id="langSelector" onchange="changeLanguage(this.value)">
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="ar">🇲🇦 العربية</option>
+                    </select>
+                    <span id="userDisplay">Admin</span>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Actions Bar -->
+                <div class="actions-bar">
+                    <button onclick="openModal()" class="btn btn-primary">
+                        <span>➕</span>
+                        <span data-i18n="addReservation">Ajouter une Réservation</span>
+                    </button>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Rechercher..." data-i18n-placeholder="search">
+                    </div>
+                    <div class="export-buttons">
+                        <button onclick="exportCSV()" class="btn btn-success">📥 CSV</button>
+                        <button onclick="exportPDF()" class="btn btn-danger">📄 PDF</button>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="client">Client</th>
+                                <th data-i18n="film">Film</th>
+                                <th data-i18n="session">Séance</th>
+                                <th data-i18n="seats">Places</th>
+                                <th data-i18n="status">Statut</th>
+                                <th data-i18n="actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination buttons will be inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" data-i18n="addReservation">Ajouter une Réservation</h2>
+                <button onclick="closeModal()" class="close-btn">✖</button>
+            </div>
+            <form id="reservationForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label data-i18n="client">Client</label>
+                    <select id="clientId" required>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="session">Séance</label>
+                    <select id="sessionId" required>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="seats">Nombre de Places</label>
+                    <input type="number" id="seats" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="status">Statut</label>
+                    <select id="status" required>
+                        <option value="Confirmée">Confirmée</option>
+                        <option value="En attente">En attente</option>
+                        <option value="Annulée">Annulée</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" onclick="closeModal()" class="btn btn-secondary" data-i18n="cancel">Annuler</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="save">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/reservations.js"></script>
+</body>
+</html>

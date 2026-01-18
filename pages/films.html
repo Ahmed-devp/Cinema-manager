@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaManager - Films</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="icon">🎬</span>
+                <h1>CinemaManager</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="../dashboard.html" class="nav-item">
+                    <span class="icon">🏠</span>
+                    <span class="text" data-i18n="dashboard">Tableau de bord</span>
+                </a>
+                <a href="films.html" class="nav-item active">
+                    <span class="icon">🎞️</span>
+                    <span class="text" data-i18n="films">Films</span>
+                </a>
+                <a href="salles.html" class="nav-item">
+                    <span class="icon">🏢</span>
+                    <span class="text" data-i18n="rooms">Salles</span>
+                </a>
+                <a href="seances.html" class="nav-item">
+                    <span class="icon">⏰</span>
+                    <span class="text" data-i18n="sessions">Séances</span>
+                </a>
+                <a href="clients.html" class="nav-item">
+                    <span class="icon">👤</span>
+                    <span class="text" data-i18n="clients">Clients</span>
+                </a>
+                <a href="reservations.html" class="nav-item">
+                    <span class="icon">🎟️</span>
+                    <span class="text" data-i18n="reservations">Réservations</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="language-switcher">
+                    <button onclick="changeLang('fr')" class="lang-btn active" data-lang="fr">FR</button>
+                    <button onclick="changeLang('en')" class="lang-btn" data-lang="en">EN</button>
+                    <button onclick="changeLang('ar')" class="lang-btn" data-lang="ar">AR</button>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <span class="icon">🚪</span>
+                    <span data-i18n="logout">Déconnexion</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2 data-i18n="films">Films</h2>
+                <div class="header-actions">
+                    <button onclick="exportCSV()" class="btn-export">📥 CSV</button>
+                    <button onclick="exportPDF()" class="btn-export">📥 PDF</button>
+                </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <span class="icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Rechercher..." data-i18n-placeholder="search">
+                </div>
+                <button onclick="openAddModal()" class="btn-primary">
+                    <span class="icon">➕</span>
+                    <span data-i18n="add">Ajouter</span>
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th data-i18n="title">Titre</th>
+                            <th data-i18n="genre">Genre</th>
+                            <th data-i18n="duration">Durée</th>
+                            <th data-i18n="releaseDate">Date de sortie</th>
+                            <th data-i18n="actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="filmsBody">
+                        <!-- Dynamic content -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <span id="paginationInfo">0 films</span>
+                <div class="pagination-controls">
+                    <button onclick="previousPage()" id="prevBtn" disabled>◀</button>
+                    <span id="pageInfo">1 / 1</span>
+                    <button onclick="nextPage()" id="nextBtn" disabled>▶</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Ajouter un film</h3>
+                <button onclick="closeModal()" class="close-btn">✖</button>
+            </div>
+            <form id="filmForm" class="modal-form">
+                <div class="form-group">
+                    <label for="title" data-i18n="title">Titre</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre" data-i18n="genre">Genre</label>
+                    <input type="text" id="genre" name="genre" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration" data-i18n="duration">Durée (minutes)</label>
+                    <input type="number" id="duration" name="duration" required>
+                </div>
+                <div class="form-group">
+                    <label for="releaseDate" data-i18n="releaseDate">Date de sortie</label>
+                    <input type="date" id="releaseDate" name="releaseDate" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="closeModal()" class="btn-secondary" data-i18n="cancel">Annuler</button>
+                    <button type="submit" class="btn-primary" data-i18n="save">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/films.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+{
+  "films": [
+    {
+      "id": 1,
+      "title": "Inception",
+      "genre": "Science-Fiction",
+      "duration": 148,
+      "releaseDate": "2010-07-16",
+      "director": "Christopher Nolan",
+      "description": "Un voleur qui s'infiltre dans les rêves des gens pour voler leurs secrets."
+    },
+    {
+      "id": 2,
+      "title": "The Dark Knight",
+      "genre": "Action",
+      "duration": 152,
+      "releaseDate": "2008-07-18",
+      "director": "Christopher Nolan",
+      "description": "Batman affronte le Joker dans une bataille épique pour sauver Gotham."
+    },
+    {
+      "id": 3,
+      "title": "Interstellar",
+      "genre": "Science-Fiction",
+      "duration": 169,
+      "releaseDate": "2014-11-07",
+      "director": "Christopher Nolan",
+      "description": "Une équipe d'explorateurs voyage à travers un trou de ver dans l'espace."
+    },
+    {
+      "id": 4,
+      "title": "Pulp Fiction",
+      "genre": "Crime",
+      "duration": 154,
+      "releaseDate": "1994-10-14",
+      "director": "Quentin Tarantino",
+      "description": "Les vies de deux tueurs à gages, un boxeur et un couple de braqueurs s'entremêlent."
+    },
+    {
+      "id": 5,
+      "title": "The Shawshank Redemption",
+      "genre": "Drame",
+      "duration": 142,
+      "releaseDate": "1994-09-23",
+      "director": "Frank Darabont",
+      "description": "Deux hommes emprisonnés nouent une amitié sur plusieurs années."
+    },
+    {
+      "id": 6,
+      "title": "Forrest Gump",
+      "genre": "Drame",
+      "duration": 142,
+      "releaseDate": "1994-07-06",
+      "director": "Robert Zemeckis",
+      "description": "L'histoire d'un homme simple qui accomplit des choses extraordinaires."
+    },
+    {
+      "id": 7,
+      "title": "The Matrix",
+      "genre": "Science-Fiction",
+      "duration": 136,
+      "releaseDate": "1999-03-31",
+      "director": "Wachowski Brothers",
+      "description": "Un hacker découvre que la réalité est une simulation informatique."
+    },
+    {
+      "id": 8,
+      "title": "Gladiator",
+      "genre": "Action",
+      "duration": 155,
+      "releaseDate": "2000-05-05",
+      "director": "Ridley Scott",
+      "description": "Un général romain devient gladiateur pour venger sa famille."
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "roomNumber": "Salle 1",
+      "capacity": 150,
+      "type": "Standard",
+      "equipment": ["Projection numérique", "Son Dolby Atmos"]
+    },
+    {
+      "id": 2,
+      "roomNumber": "Salle 2",
+      "capacity": 200,
+      "type": "VIP",
+      "equipment": ["Projection laser", "Son Dolby Atmos", "Sièges inclinables"]
+    },
+    {
+      "id": 3,
+      "roomNumber": "Salle 3",
+      "capacity": 300,
+      "type": "IMAX",
+      "equipment": ["Écran IMAX", "Son IMAX", "Projection 70mm"]
+    },
+    {
+      "id": 4,
+      "roomNumber": "Salle 4",
+      "capacity": 100,
+      "type": "3D",
+      "equipment": ["Projection 3D", "Son 7.1", "Lunettes 3D"]
+    },
+    {
+      "id": 5,
+      "roomNumber": "Salle 5",
+      "capacity": 180,
+      "type": "Standard",
+      "equipment": ["Projection numérique", "Son 5.1"]
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "filmId": 1,
+      "roomId": 1,
+      "date": "2026-01-20",
+      "time": "14:00",
+      "price": 80,
+      "language": "VF",
+      "subtitles": false
+    },
+    {
+      "id": 2,
+      "filmId": 2,
+      "roomId": 2,
+      "date": "2026-01-20",
+      "time": "16:30",
+      "price": 100,
+      "language": "VO",
+      "subtitles": true
+    },
+    {
+      "id": 3,
+      "filmId": 3,
+      "roomId": 3,
+      "date": "2026-01-21",
+      "time": "18:00",
+      "price": 120,
+      "language": "VO",
+      "subtitles": true
+    },
+    {
+      "id": 4,
+      "filmId": 1,
+      "roomId": 1,
+      "date": "2026-01-21",
+      "time": "20:00",
+      "price": 80,
+      "language": "VF",
+      "subtitles": false
+    },
+    {
+      "id": 5,
+      "filmId": 4,
+      "roomId": 4,
+      "date": "2026-01-22",
+      "time": "15:00",
+      "price": 90,
+      "language": "VO",
+      "subtitles": true
+    },
+    {
+      "id": 6,
+      "filmId": 5,
+      "roomId": 5,
+      "date": "2026-01-22",
+      "time": "17:30",
+      "price": 70,
+      "language": "VF",
+      "subtitles": false
+    },
+    {
+      "id": 7,
+      "filmId": 6,
+      "roomId": 1,
+      "date": "2026-01-23",
+      "time": "14:00",
+      "price": 80,
+      "language": "VF",
+      "subtitles": false
+    },
+    {
+      "id": 8,
+      "filmId": 7,
+      "roomId": 3,
+      "date": "2026-01-23",
+      "time": "19:00",
+      "price": 120,
+      "language": "VO",
+      "subtitles": true
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Ahmed Benali",
+      "email": "ahmed.benali@email.com",
+      "phone": "0612345678",
+      "memberSince": "2024-01-15",
+      "address": "123 Rue Mohammed V, Casablanca"
+    },
+    {
+      "id": 2,
+      "name": "Fatima Zahra",
+      "email": "fatima.zahra@email.com",
+      "phone": "0623456789",
+      "memberSince": "2024-02-20",
+      "address": "456 Boulevard Hassan II, Rabat"
+    },
+    {
+      "id": 3,
+      "name": "Mohammed Ali",
+      "email": "mohammed.ali@email.com",
+      "phone": "0634567890",
+      "memberSince": "2024-03-10",
+      "address": "789 Avenue des FAR, Marrakech"
+    },
+    {
+      "id": 4,
+      "name": "Sarah El Amrani",
+      "email": "sarah.elamrani@email.com",
+      "phone": "0645678901",
+      "memberSince": "2024-04-05",
+      "address": "321 Rue Allal Ben Abdellah, Fès"
+    },
+    {
+      "id": 5,
+      "name": "Youssef Idrissi",
+      "email": "youssef.idrissi@email.com",
+      "phone": "0656789012",
+      "memberSince": "2024-05-12",
+      "address": "654 Boulevard Zerktouni, Casablanca"
+    },
+    {
+      "id": 6,
+      "name": "Malika Benjelloun",
+      "email": "malika.benjelloun@email.com",
+      "phone": "0667890123",
+      "memberSince": "2024-06-18",
+      "address": "987 Rue de la Liberté, Tanger"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "sessionId": 1,
+      "seats": 2,
+      "status": "Confirmée",
+      "bookingDate": "2026-01-15",
+      "totalPrice": 160
+    },
+    {
+      "id": 2,
+      "clientId": 2,
+      "sessionId": 2,
+      "seats": 4,
+      "status": "Confirmée",
+      "bookingDate": "2026-01-16",
+      "totalPrice": 400
+    },
+    {
+      "id": 3,
+      "clientId": 3,
+      "sessionId": 3,
+      "seats": 1,
+      "status": "En attente",
+      "bookingDate": "2026-01-17",
+      "totalPrice": 120
+    },
+    {
+      "id": 4,
+      "clientId": 4,
+      "sessionId": 4,
+      "seats": 3,
+      "status": "Confirmée",
+      "bookingDate": "2026-01-17",
+      "totalPrice": 240
+    },
+    {
+      "id": 5,
+      "clientId": 5,
+      "sessionId": 5,
+      "seats": 2,
+      "status": "Annulée",
+      "bookingDate": "2026-01-18",
+      "totalPrice": 180
+    },
+    {
+      "id": 6,
+      "clientId": 6,
+      "sessionId": 6,
+      "seats": 2,
+      "status": "Confirmée",
+      "bookingDate": "2026-01-18",
+      "totalPrice": 140
+    },
+    {
+      "id": 7,
+      "clientId": 1,
+      "sessionId": 7,
+      "seats": 1,
+      "status": "Confirmée",
+      "bookingDate": "2026-01-19",
+      "totalPrice": 80
+    },
+    {
+      "id": 8,
+      "clientId": 2,
+      "sessionId": 8,
+      "seats": 3,
+      "status": "En attente",
+      "bookingDate": "2026-01-19",
+      "totalPrice": 360
+    }
+  ],
+  "statistics": {
+    "totalFilms": 8,
+    "totalRooms": 5,
+    "totalSessions": 8,
+    "totalClients": 6,
+    "totalReservations": 8,
+    "revenue": {
+      "daily": 1280,
+      "weekly": 8960,
+      "monthly": 38400
+    },
+    "occupancyRate": 68.5,
+    "popularGenres": [
+      { "genre": "Science-Fiction", "count": 3 },
+      { "genre": "Action", "count": 2 },
+      { "genre": "Drame", "count": 2 },
+      { "genre": "Crime", "count": 1 }
+    ]
+  }
+}

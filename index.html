@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaManager - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="icon">🎬</div>
+                <h1>CinemaManager</h1>
+                <p id="loginSubtitle">Connexion au système</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username" id="usernameLabel">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" value="admin" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" id="passwordLabel">Mot de passe</label>
+                    <input type="password" id="password" name="password" value="admin" required>
+                </div>
+
+                <button type="submit" class="btn-primary" id="loginBtn">Se connecter</button>
+            </form>
+
+            <div class="language-switcher">
+                <button onclick="changeLang('fr')" class="lang-btn active" data-lang="fr">FR</button>
+                <button onclick="changeLang('en')" class="lang-btn" data-lang="en">EN</button>
+                <button onclick="changeLang('ar')" class="lang-btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
